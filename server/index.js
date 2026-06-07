@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from 'cors';
 import authRoutes from "./routers/auth.routes.js";
 import { connectDB } from './utils/dbconfig.js';
+import uploadRoutes from "./routers/upload.routes.js";
 
 const app = express();
 
@@ -33,3 +34,4 @@ connectDB().then(() => {
 });
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1", uploadRoutes);
